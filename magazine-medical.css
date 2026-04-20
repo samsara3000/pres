@@ -721,8 +721,8 @@ section.three-col .col3-danger .col3-title {
 
 /* ══════════════════════════════════════════════
    10. INSTR-DIAG — Инструментальная диагностика
-   Левая колонка: серая плашка + красная стрелка + белые карточки
-   Правая колонка: список с маркерами
+   Левая колонка: синяя плашка + красная стрелка + белые карточки
+   Правая колонка: список с маркерами или таблица
    ══════════════════════════════════════════════ */
 
 section.instr-diag {
@@ -731,33 +731,34 @@ section.instr-diag {
   flex-direction: column;
 }
 
+/* Основной грид: 38% лево + остальное право */
 section.instr-diag .id-wrap {
   display: grid;
-  grid-template-columns: 42% 1fr;
-  gap: 28px;
+  grid-template-columns: 38% 1fr;
+  gap: 30px;
   flex: 1;
   min-height: 0;
 }
 
 /* Левая панель */
-section.instr-diag .id-left {
+.id-left {
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
 
-/* Серая плашка-заголовок секции */
+/* Сине-серая плашка-заголовок секции */
 .id-section-label {
-  background: #5B6B7C;
+  background: #4A617A;
   color: #FFFFFF;
   font-family: 'Source Sans 3', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.4;
-  padding: 10px 16px;
-  border-radius: 3px;
+  line-height: 1.45;
+  padding: 13px 20px;
+  border-radius: 8px;
   text-align: center;
-  margin-bottom: 0;
+  flex-shrink: 0;
 }
 
 /* Обёртка: красная вертикальная линия + карточки */
@@ -766,16 +767,16 @@ section.instr-diag .id-left {
   flex-direction: row;
   flex: 1;
   min-height: 0;
-  margin-top: 6px;
+  margin-top: 8px;
+  padding-bottom: 14px; /* room for arrow */
 }
 
 .id-line {
-  width: 4px;
-  min-height: 100%;
-  background: linear-gradient(to bottom, #CC2222 90%, transparent 100%);
+  width: 5px;
+  background: #DD1111;
   flex-shrink: 0;
   margin-right: 10px;
-  border-radius: 2px;
+  border-radius: 2px 2px 0 0;
   position: relative;
 }
 
@@ -783,30 +784,31 @@ section.instr-diag .id-left {
 .id-line::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 9px solid #CC2222;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 13px solid #DD1111;
 }
 
 .id-boxes {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 8px;
   flex: 1;
 }
 
 /* Белая карточка диагностического исследования */
 .id-box {
   background: #FFFFFF;
-  border: 1px solid rgba(74, 44, 26, 0.22);
-  border-radius: 3px;
-  padding: 8px 11px;
+  border: 1px solid #C8C8C8;
+  border-radius: 4px;
+  padding: 9px 12px;
   font-size: 12.5px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text);
+  text-align: justify;
   flex: 1;
 }
 
@@ -817,12 +819,11 @@ section.instr-diag .id-left {
   font-weight: 700;
 }
 
-/* Правая панель */
+/* Правая панель — список */
 section.instr-diag .id-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
 }
 
 section.instr-diag .id-right ul {
@@ -832,11 +833,11 @@ section.instr-diag .id-right ul {
 }
 
 section.instr-diag .id-right ul li {
-  padding-left: 24px;
+  padding-left: 26px;
   position: relative;
-  margin-bottom: 12px;
-  font-size: 15px;
-  line-height: 1.65;
+  margin-bottom: 13px;
+  font-size: 14.5px;
+  line-height: 1.7;
   text-align: justify;
 }
 
@@ -844,10 +845,17 @@ section.instr-diag .id-right ul li::before {
   content: '➤';
   position: absolute;
   left: 0;
-  top: 1px;
-  color: var(--accent-dark);
-  font-size: 13px;
-  line-height: 1.8;
+  top: 2px;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* Правая панель — таблица */
+section.instr-diag .id-right table {
+  margin-top: 4px;
+  align-self: flex-start;
+  width: 100%;
 }
 
 /* ══════════════════════════════════════════════
@@ -864,7 +872,7 @@ section.dual-instr {
 section.dual-instr .di-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 28px;
   flex: 1;
   min-height: 0;
 }
@@ -876,14 +884,10 @@ section.dual-instr .di-col {
 }
 
 section.dual-instr .id-section-label {
-  font-size: 13.5px;
-}
-
-section.dual-instr .id-timeline {
-  margin-top: 6px;
+  font-size: 14px;
 }
 
 section.dual-instr .id-box {
   font-size: 12px;
-  padding: 7px 10px;
+  padding: 8px 11px;
 }
