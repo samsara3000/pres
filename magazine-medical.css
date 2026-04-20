@@ -692,6 +692,16 @@ section.diagram {
   min-height: 0;
 }
 
+/* 3-колоночный вариант: 3 ветки + full-width строка снизу */
+.diag-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
 /* ══════════════════════════════════════════════
    9. THREE-COL — Три колонки (для определений)
    ══════════════════════════════════════════════ */
