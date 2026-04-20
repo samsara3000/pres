@@ -738,7 +738,6 @@ section.insights-two-col .insights-layout {
   grid-template-columns: 49% 47%;
   gap: 24px;
   align-items: start;
-  flex: 1;
 }
 
 section.insights-two-col .insight-card {
