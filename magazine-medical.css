@@ -718,3 +718,42 @@ section.three-col .col3-danger {
 section.three-col .col3-danger .col3-title {
   color: #CC2222;
 }
+
+/* ══════════════════════════════════════════════
+   10. INSIGHTS-TWO-COL — Центрированный заголовок + карточки
+   ══════════════════════════════════════════════ */
+
+section.insights-two-col {
+  padding-top: 62px;
+}
+
+section.insights-two-col h1 {
+  text-align: center;
+  font-size: 46px;
+  margin: 0 0 24px 0;
+}
+
+section.insights-two-col .insights-layout {
+  display: grid;
+  grid-template-columns: 49% 47%;
+  gap: 24px;
+  align-items: start;
+  flex: 1;
+}
+
+section.insights-two-col .insight-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1.5px solid var(--accent-dark);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: left;
+}
+
+section.insights-two-col .insight-card strong {
+  font-family: 'Source Sans 3', sans-serif;
+  display: block;
+  margin-bottom: 4px;
+}
