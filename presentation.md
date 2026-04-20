@@ -476,55 +476,37 @@ headingDivider: false
 ---
 
 <!-- ══════════════════════════════════════════ -->
-<!-- СЛАЙД 15: СТАТУС В ГКБ 52                 -->
+<!-- СЛАЙД 15: ГОСПИТАЛИЗАЦИЯ В ГКБ № 52      -->
 <!-- ══════════════════════════════════════════ -->
 
-<!-- _class: timeline -->
+<!-- _class: two-col -->
 
-## ГКБ № 52: Данные осмотра
+## Госпитализация в ГКБ № 52
 
-<div class="tl-grid">
+<div class="cols">
+<div class="col-text">
 
-<div class="tl-item">
-  <div class="tl-header">
-    <span class="badge">1</span>
-    <span class="tl-date">Шкалы тяжести</span>
-  </div>
-  <div class="tl-body">
-    ШКГ <strong>15</strong> · APACHE II <strong>2</strong> · SOFA <strong>6</strong>. Пациентка в сознании, ориентирована верно, несколько энцефалопатична, к состоянию не критична.
-  </div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+  <span class="badge">1</span>
+  <span style="font-family:'Source Sans 3',sans-serif;font-size:18px;font-weight:700">Данные объективного осмотра</span>
 </div>
 
-<div class="tl-item">
-  <div class="tl-header">
-    <span class="badge">2</span>
-    <span class="tl-date">Дыхание</span>
-  </div>
-  <div class="tl-body">
-    Самостоятельное, инсуффляция O₂ 4 л/мин. <strong>SpO₂ 94%</strong>.
-  </div>
+- <span style="color:#CC2222;text-decoration:underline">Общее состояние тяжёлое</span>
+- Ориентация в пространстве, времени и собственной личности сохранена
+- ШКГ 15; APACHE II 2; SOFA 6
+- Пациентка в сознании, спокойна, комплаентна. Несколько энцефалопатична, к состоянию не критична.
+
+<div style="display:flex;align-items:center;gap:12px;margin-top:14px;margin-bottom:10px">
+  <span class="badge">2</span>
 </div>
 
-<div class="tl-item">
-  <div class="tl-header">
-    <span class="badge dark">3</span>
-    <span class="tl-date">Гемодинамика</span>
-  </div>
-  <div class="tl-body">
-    АД 112/76 мм рт.ст. · ЧСС 81 уд/мин · Пульс ритмичный.
-  </div>
-</div>
+- Дыхание: <span style="color:#CC2222;text-decoration:underline">самостоятельное, объём ингаляции 4 л/мин; SpO₂ 94%</span>
+- САД 112 мм рт.ст., ДАД 76 мм рт.ст., ЧСС 81/мин, пульс 81/мин
 
-<div class="tl-item">
-  <div class="tl-header">
-    <span class="badge dark">4</span>
-    <span class="tl-date">Прогрессирование</span>
-  </div>
-  <div class="tl-body">
-    Обширные ишемические очаги с геморрагическим пропитыванием в полушариях мозга и мозжечке (различные бассейны). Снижение бодрствования <strong>до комы</strong>.
-  </div>
 </div>
-
+<div class="col-img">
+<img src="./images/gkb52.jpg" alt="ГКБ № 52">
+</div>
 </div>
 
 ---
