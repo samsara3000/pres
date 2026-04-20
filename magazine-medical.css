@@ -1,0 +1,720 @@
+/* @theme magazine-medical */
+/* =========================================================
+   Magazine Medical — Marp Theme
+   Стиль: тёплый кремовый фон, декоративная рамка,
+   нумерованные бейджи, Georgia serif.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* ── Переменные ── */
+:root {
+  --bg:          #EDE8D5;
+  --bg-card:     #F5F1E4;
+  --text:        #2C1A0E;
+  --muted:       #8B7355;
+  --accent:      #CC6B2C;
+  --accent-dark: #4A2C1A;
+  --divider:     rgba(74, 44, 26, 0.25);
+  --frame:       rgba(74, 44, 26, 0.30);
+  --white:       #FFFFFF;
+}
+
+/* ══════════════════════════════════════════════
+   БАЗОВЫЙ СЛАЙД
+   ══════════════════════════════════════════════ */
+section {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.65;
+  padding: 56px 68px 52px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* ── Декоративная рамка (инсет) ── */
+section::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  border: 1px solid var(--frame);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* ── Глобальный хедер (masthead) ── */
+section header {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Нумерация страниц ── */
+section::after {
+  position: absolute;
+  bottom: 26px;
+  right: 36px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  z-index: 101;
+}
+
+/* ══════════════════════════════════════════════
+   ТИПОГРАФИКА
+   ══════════════════════════════════════════════ */
+
+/* H1 — крупное название (обложка и разделители) */
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  letter-spacing: 0;
+}
+
+/* H2 — заголовок слайда: 1.3× от тела (17px → 22px) */
+h2 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: left;
+  color: var(--text);
+  margin: 0 0 20px 0;
+}
+
+h2::after { display: none; }
+
+/* H3 — подзаголовок карточки */
+h3 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  letter-spacing: 0;
+}
+
+p { margin: 0 0 10px 0; text-align: justify; }
+
+strong { font-weight: 700; color: var(--text); }
+
+em { font-style: italic; color: var(--muted); }
+
+/* ── Списки ── */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+ul li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 7px;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+ul li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+ol {
+  padding-left: 22px;
+  margin: 0 0 10px 0;
+}
+
+ol li { margin-bottom: 7px; font-size: 16px; line-height: 1.6; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 16px 0;
+}
+
+/* ── Таблицы ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+thead tr { background: var(--accent-dark); color: var(--white); }
+
+thead th {
+  padding: 9px 14px;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  border: none;
+}
+
+tbody tr:nth-child(odd)  { background: rgba(237, 232, 213, 0.6); }
+tbody tr:nth-child(even) { background: rgba(204, 107, 44, 0.08); }
+
+tbody td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--divider);
+  font-size: 14px;
+  vertical-align: top;
+}
+
+/* ── Blockquote ── */
+blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 14px 0;
+  padding: 10px 18px;
+  background: rgba(204, 107, 44, 0.07);
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+blockquote p { margin: 0; text-align: left; font-size: 16px; }
+
+/* ── Code ── */
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  background: rgba(74, 44, 26, 0.08);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* ══════════════════════════════════════════════
+   НУМЕРОВАННЫЙ БЕЙДЖ (используется во всех слайдах)
+   ══════════════════════════════════════════════ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: var(--accent);
+  color: var(--white);
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.badge.dark { background: var(--accent-dark); }
+
+/* ══════════════════════════════════════════════
+   1. COVER — Обложка (вертикальные полосы + овал)
+   ══════════════════════════════════════════════ */
+
+section.cover {
+  background-color: #EDE5D8;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 14px,
+    rgba(120, 88, 62, 0.09) 14px,
+    rgba(120, 88, 62, 0.09) 15px
+  );
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 48px 72px;
+}
+
+/* Большой овал */
+section.cover::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 79%;
+  height: 88%;
+  border: 1px solid rgba(120, 88, 62, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Учреждение */
+.cover-institution {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 13.5px;
+  color: #6B4A32;
+  text-align: center;
+  line-height: 1.75;
+  margin-bottom: 22px;
+}
+
+/* Главный заголовок */
+section.cover h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #3A1E0A;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+  margin: 0 auto 18px;
+  max-width: 80%;
+}
+
+/* Декоративный орнамент */
+.cover-ornament {
+  font-size: 24px;
+  color: #8B6545;
+  text-align: center;
+  margin: 4px 0 20px;
+  letter-spacing: 8px;
+}
+
+/* Авторы */
+.cover-authors {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 13.5px;
+  color: #6B4A32;
+  text-align: center;
+  line-height: 1.75;
+  max-width: 72%;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════
+   2. TIMELINE — Хронология (2×2 сетка)
+   ══════════════════════════════════════════════ */
+
+section.timeline {
+  padding-top: 48px;
+}
+
+section.timeline .tl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 36px;
+  margin-top: 4px;
+  flex: 1;
+}
+
+section.timeline .tl-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+section.timeline .tl-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+section.timeline .tl-date {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+section.timeline .tl-body {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--text);
+}
+
+/* ══════════════════════════════════════════════
+   3. TWO-COL — Текст + изображение
+   ══════════════════════════════════════════════ */
+
+section.two-col {
+  padding-top: 50px;
+}
+
+section.two-col .cols {
+  display: grid;
+  grid-template-columns: 56% 40%;
+  gap: 40px;
+  align-items: start;
+  margin-top: 4px;
+  flex: 1;
+}
+
+section.two-col .col-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+section.two-col .col-img img {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* ══════════════════════════════════════════════
+   4. STATS — Большие цифры
+   ══════════════════════════════════════════════ */
+
+section.stats {
+  justify-content: center;
+  align-items: center;
+}
+
+section.stats h2 { margin-bottom: 32px; }
+
+section.stats .stat-grid {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section.stats .stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+section.stats .stat-rule-top,
+section.stats .stat-rule-bottom {
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+}
+
+section.stats .stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 68px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  line-height: 1;
+  padding: 12px 0 6px;
+}
+
+section.stats .stat-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  max-width: 140px;
+  padding-bottom: 4px;
+}
+
+/* ══════════════════════════════════════════════
+   5. TABLE-SLIDE — Таблица
+   ══════════════════════════════════════════════ */
+
+section.table-slide {
+  padding-top: 50px;
+}
+
+section.table-slide table {
+  font-size: 13.5px;
+  margin-top: 4px;
+}
+
+section.table-slide thead tr { background: var(--accent); }
+
+section.table-slide thead th {
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+section.table-slide tbody td {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+/* ══════════════════════════════════════════════
+   6. SECTION-HEADER — Тёмный разделитель
+   ══════════════════════════════════════════════ */
+
+section.section-header {
+  background: var(--accent-dark);
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 80px;
+}
+
+section.section-header::before {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+section.section-header h1 {
+  color: var(--bg);
+  font-size: 48px;
+}
+
+section.section-header h2 {
+  color: rgba(237, 232, 213, 0.55);
+  font-size: 11px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+section.section-header .section-number {
+  position: absolute;
+  right: 56px;
+  bottom: -8px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 130px;
+  font-weight: 700;
+  color: rgba(204, 107, 44, 0.2);
+  line-height: 1;
+}
+
+section.section-header header { color: rgba(255,255,255,0.3); }
+section.section-header::after { color: rgba(255,255,255,0.3); }
+
+/* ══════════════════════════════════════════════
+   7. ANAMNES — 6 элементов + картинка справа-сверху
+   Сетка: [item1][img] / [item2][img] / [item3][item5] / [item4][item6]
+   ══════════════════════════════════════════════ */
+
+section.anamnes {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.anamnes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px 22px;
+  flex: 1;
+  min-height: 0;
+}
+
+.anamnes-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.anamnes-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.anamnes-date {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.anamnes-body {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.anamnes-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.anamnes-img img {
+  width: 100%;
+  height: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ══════════════════════════════════════════════
+   8. DIAGRAM — Диагностическое дерево (3 уровня)
+   Root (full) → Branches (2fr+1fr) → Leaves (1fr×3)
+   Колонки 1fr×3 общие для веток и листьев — выравнивание автоматическое
+   ══════════════════════════════════════════════ */
+
+section.diagram {
+  background: #EDE8D5;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.diag-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+.diag-root {
+  background: var(--accent);          /* тот же оранжевый, что в thead таблицы */
+  color: #fff;
+  border-radius: 4px;
+  padding: 11px 28px;
+  text-align: center;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Общая сетка для веток и листьев — 3 равные колонки */
+.diag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Ветки (симптомы) — светло-кремовый с оранжевой рамкой */
+.diag-branch {
+  background: #F5EBD8;
+  color: var(--text);
+  border: 1.5px solid #CC6B2C;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.diag-branch-1 { grid-column: 1 / 3; grid-row: 1; }  /* над листьями 1–2 */
+.diag-branch-2 { grid-column: 3;     grid-row: 1; }  /* над листом 3 */
+
+/* Листья — белые карточки для контраста с кремовым фоном */
+.diag-leaf {
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 44, 26, 0.20);
+  border-radius: 4px;
+  padding: 10px 13px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.diag-leaf-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 700;
+  color: var(--accent-dark);
+  font-size: 13px;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(74, 44, 26, 0.15);
+}
+
+.diag-leaf-1 { grid-column: 1; grid-row: 2; }
+.diag-leaf-2 { grid-column: 2; grid-row: 2; }
+.diag-leaf-3 { grid-column: 3; grid-row: 2; }
+
+/* 2-колоночный вариант: ветки 50/50, листья 50/50 */
+.diag-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ══════════════════════════════════════════════
+   9. THREE-COL — Три колонки (для определений)
+   ══════════════════════════════════════════════ */
+
+section.three-col {
+  padding-top: 50px;
+}
+
+section.three-col .cols3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 28px;
+  margin-top: 4px;
+  flex: 1;
+}
+
+section.three-col .col3-item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.45);
+  border: 1px solid var(--divider);
+  border-top: 3px solid var(--accent);
+  padding: 16px;
+  border-radius: 2px;
+  gap: 8px;
+}
+
+section.three-col .col3-title {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 4px;
+}
+
+section.three-col .col3-body {
+  font-size: 14.5px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+section.three-col .col3-danger {
+  border: 2.5px solid #CC2222;
+  border-top: 3px solid #CC2222;
+  background: rgba(204, 34, 34, 0.05);
+}
+
+section.three-col .col3-danger .col3-title {
+  color: #CC2222;
+}
