@@ -718,3 +718,172 @@ section.three-col .col3-danger {
 section.three-col .col3-danger .col3-title {
   color: #CC2222;
 }
+
+/* ══════════════════════════════════════════════
+   10. INSTR-DIAG — Инструментальная диагностика
+   Левая колонка: серая плашка + красная стрелка + белые карточки
+   Правая колонка: список с маркерами
+   ══════════════════════════════════════════════ */
+
+section.instr-diag {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.instr-diag .id-wrap {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: 28px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Левая панель */
+section.instr-diag .id-left {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Серая плашка-заголовок секции */
+.id-section-label {
+  background: #5B6B7C;
+  color: #FFFFFF;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 10px 16px;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Обёртка: красная вертикальная линия + карточки */
+.id-timeline {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 0;
+  margin-top: 6px;
+}
+
+.id-line {
+  width: 4px;
+  min-height: 100%;
+  background: linear-gradient(to bottom, #CC2222 90%, transparent 100%);
+  flex-shrink: 0;
+  margin-right: 10px;
+  border-radius: 2px;
+  position: relative;
+}
+
+/* Стрелка вниз на конце линии */
+.id-line::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 9px solid #CC2222;
+}
+
+.id-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+/* Белая карточка диагностического исследования */
+.id-box {
+  background: #FFFFFF;
+  border: 1px solid rgba(74, 44, 26, 0.22);
+  border-radius: 3px;
+  padding: 8px 11px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text);
+  flex: 1;
+}
+
+/* Красный подчёркнутый акцент (ключевые находки) */
+.id-highlight {
+  color: #CC2222;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+/* Правая панель */
+section.instr-diag .id-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+section.instr-diag .id-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section.instr-diag .id-right ul li {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+section.instr-diag .id-right ul li::before {
+  content: '➤';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--accent-dark);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ══════════════════════════════════════════════
+   11. DUAL-INSTR — Двухпанельная инструментальная диагностика
+   Два столбца, каждый со своей плашкой + линией + карточками
+   ══════════════════════════════════════════════ */
+
+section.dual-instr {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.dual-instr .di-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+  min-height: 0;
+}
+
+section.dual-instr .di-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+section.dual-instr .id-section-label {
+  font-size: 13.5px;
+}
+
+section.dual-instr .id-timeline {
+  margin-top: 6px;
+}
+
+section.dual-instr .id-box {
+  font-size: 12px;
+  padding: 7px 10px;
+}
